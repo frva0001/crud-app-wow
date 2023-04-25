@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <title>wow crud app form test</title>
+   </head>
+   <body>
+    <!-- Form -->
+      <div>
+         <form id="completeForm">
+            <section id="characterInformation">
+                <!-- Character name -->
+               <label for="characterName"> Character Name </label>
+               <input type="text" name="characterName" id="characterName" /> </br></br>
+                <!-- Character race -->
+                <section id="raceOptionGrid">
+                    <label for="race">What is the race of your character?</label>
+                    <select id="race">
+                        <option>Human</option>
+                        <option>Dwarf</option>
+                        <option>Night Elf</option>
+                        <option>Gnome</option>
+                        <option>Draenei</option>
+                        <option>Worgen</option>
+                        <option>Orc</option>
+                        <option>Undead</option>
+                        <option>Tauren</option>
+                        <option>Troll</option>
+                        <option>Blood Elf</option>
+                        <option>Goblin</option>
+                        <option>Pandaren</option>
+                        <option>Dracthyr</option>
+                        <option>Void Elf</option>
+                        <option>Lightforged Draenei</option>
+                        <option>Dark Iron Dwarf</option>
+                        <option>Kul Tiran</option>
+                        <option>Mecha Gnome</option>
+                        <option>Nightborne</option>
+                        <option>Highmountain Tauren</option>
+                        <option>Mag'har Orc</option>
+                        <option>Zandalari Troll</option>
+                        <option>Vulpera</option>
+                    </select>
+                    <!-- <input type="text" name="race" id="race"> -->
+                    <label for="side"></label>
+                    <select id="side">
+                        <option>Alliance</option>
+                        <option>Horde</option>
+                    </select>
+                </section></br>
+                <!-- Class -->
+                <label for="class">Pick your Class</label>
+                <select id="class">
+                    <option value="warrior">Warrior</option>
+                    <option value="paladin">Paladin</option>
+                    <option valie="hunter">Hunter</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="priest">Priest</option>
+                    <option value="shaman"> Shaman</option>
+                    <option value="mage">Mage</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="monk">Monk</option>
+                    <option value="druid">Druid</option>
+                    <option value="demonHunter">Demon Hunter</option>
+                    <option value="deathKnight">Death Knight</option>
+                    <option value="evoker">Evoker</option>
+                </select> </br></br>
+                <!-- Specialization and Role -->
+                <label for="spec"> Write your Specialization</label>
+                <input type="text" name="spec" id="spec"></br></br>
+                <select id="specialization">
+                    <option value="">Choose your Specialization</option>
+                    <optgroup label="Warrior">
+                        <option value="arms"> Arms </option>
+                        <option value="fury"> Fury </option>
+                        <option value="protection"> Protection </option>
+                    </optgroup>
+                    <optgroup label="Paladin">
+                        <option value="protection"> Protection </option>
+                        <option value="retribution"> Retribution </option>
+                        <option value="holy"> Holy </option>
+                    </optgroup>
+                </select>
+                <label for="role"> Pick your Primary Role</label>
+                <select id="role">
+                    <option>Tank</option>
+                    <option>Healer</option>
+                    <option>Ranged</option>
+                    <option>Meele</option>
+                </select></br></br>
+                <!-- Item Level and Level-->
+                <label for="itemLevel">Item Level</label>
+                <input type="number" name="itemLevel" id="itemLevel"></br></br>
+                <label for="level">Level</label>
+                <input type="number" name="level" id="level"></br></br>
+            </section>
+            <section id="personalInformation">
+                <!-- Motive -->
+                <label for="motive">Things I would like to do with my character</label> </br></br>
+                <input type="checkbox" name="activities" id="leveling" value="Leveling and BFA dungeons" />
+                <label for="leveling"> Leveling and BFA dungeons</label></br>
+                <input type="checkbox" name="activities" id="questing" value="Questing" />
+                <label for="questing"> Questing </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus1" value="Mythic+, key 1-10"/>
+                <label for="mythicPlus1"> Mythic+, key 1-10 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus2" value="Mythic+, key 10-15" />
+                <label for="mythicPlus2"> Mythic+, key 10-15 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus3" value="Mythic+, key 15-20"/>
+                <label for="mythicPlus3"> Mythic+, key 15-20 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus4" value="Mythic+, key 20 and above"/>
+                <label for="mythicPlus4"> Mythic+, key 20 and above </label></br>
+                <input type="checkbox" name="activities" id="raid1" value="Vault of the Incarnates Normal" />
+                <label for="raid1"> Vault of the Incarnates Normal</label></br>
+                <input type="checkbox" name="activities" id="raid2" value="Vault of the Incarnates Heroic"/>
+                <label for="raid2"> Vault of the Incarnates Heroic</label></br>
+                <input type="checkbox" name="activities" id="raid3" value="Vault of the Incarnates Mythic"/>
+                <label for="raid3"> Vault of the Incarnates Mythic </label></br>
+                <input type="checkbox" name="activities" id="pvp1" value="Battlegrounds 10v10, 15v15"/>
+                <label for="pvp1"> Battlegrounds 10v10, 15v15 </label></br>
+                <input type="checkbox" name="activities" id="pvp2" value="Arenas 2v2, 3v3"/>
+                <label for="pvp2">  Arenas 2v2, 3v3 </label></br>
+                <input type="checkbox" name="activities" id="transmogsAndMounts" value="Transmog Hunting and Mount Farming"/>
+                <label for="transmogsAndMounts">  Transmog Hunting and Mount Farming </label></br></br>
+                <!-- Country -->
+                <label for="country"> Where are you from? </label>
+                <input type="text" name="country" id="country"></br></br>
+                <!-- Battelnet -->
+                <label for="battletag"> Whats your battletag? </label>
+                <input type="text" name="battletag" id="battletag"></br></br>
+            </section>
+            <section id="buttons">
+                <input type="submit" name="btn-add" id="btn-add" value="Add Character">
+                <input type="reset" name ="btn-reset" id="btn-reset" value="Reset form">
+            </section>
+        </form>
+    </div>
+
+    <!-- Small dialog for character -->
+
+    <div>
+        <dialog>
+            <section>
+                <p>Hi! I am <span id="dialogName"></span></p>
+                <p>Race: <span id="dialogRace"></span></p>
+                <p>I side with the <span id="dialogSide"></span></p>
+                <p>Class: <span id="dialogName"></span></p>
+                <p>Specialization: <span id="dialogName"></span></p>
+            </section>
+        </dialog>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
