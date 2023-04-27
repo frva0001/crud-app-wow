@@ -1,4 +1,3 @@
-"use strict"
 "use strict";
 
 console.log("hej1");
