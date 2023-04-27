@@ -3,6 +3,15 @@ window.addEventListener("load", start);
 
 function start() {
   allPreFilterEvents();
+  getCharacters();
+}
+
+async function getCharacters() {
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+  console.log(characters);
+  return characters;
 }
 
 function allPreFilterEvents() {
@@ -32,12 +41,17 @@ function preFilterLeveling() {
   });
 }
 
-function filterLeveling(character) {
-  if ((character.leveling = true)) {
-    return true;
-  } else {
-    return false;
-  }
+async function filterLeveling() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const leveledCharacters = characters.filter(
+    (character) => character.activities.leveling
+  );
+  console.log(leveledCharacters);
+  return leveledCharacters;
 }
 
 function preFilterQuesting() {
@@ -52,12 +66,17 @@ function preFilterQuesting() {
   });
 }
 
-function filterQuesting(character) {
-  if (character.activities === "questing") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterQuesting() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const questingCharacters = characters.filter(
+    (character) => character.activities.questing
+  );
+  console.log(questingCharacters);
+  return questingCharacters;
 }
 
 function preFilterMythicPlus1() {
@@ -72,12 +91,17 @@ function preFilterMythicPlus1() {
   });
 }
 
-function filterMythicPlus1(character) {
-  if (character.activities === "mythicPlus1") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterMythicPlus1() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const mythicPlus1Characters = characters.filter(
+    (character) => character.activities.mythicPlus1
+  );
+  console.log(mythicPlus1Characters);
+  return mythicPlus1Characters;
 }
 
 function preFilterMythicPlus2() {
@@ -92,12 +116,17 @@ function preFilterMythicPlus2() {
   });
 }
 
-function filterMythicPlus2(character) {
-  if (character.activities === "mythicPlus2") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterMythicPlus2() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const mythicPlus2Characters = characters.filter(
+    (character) => character.activities.mythicPlus2
+  );
+  console.log(mythicPlus2Characters);
+  return mythicPlus2Characters;
 }
 
 function preFilterMythicPlus3() {
@@ -112,12 +141,17 @@ function preFilterMythicPlus3() {
   });
 }
 
-function filterMythicPlus1(character) {
-  if (character.activities === "mythicPlus3") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterMythicPlus3() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const mythicPlus3Characters = characters.filter(
+    (character) => character.activities.mythicPlus3
+  );
+  console.log(mythicPlus3Characters);
+  return mythicPlus3Characters;
 }
 
 function preFilterMythicPlus4() {
@@ -132,12 +166,17 @@ function preFilterMythicPlus4() {
   });
 }
 
-function filterMythicPlus4(character) {
-  if (character.activities === "mythicPlus4") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterMythicPlus4() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const mythicPlus4Characters = characters.filter(
+    (character) => character.activities.mythicPlus4
+  );
+  console.log(mythicPlus4Characters);
+  return mythicPlus4Characters;
 }
 
 function preFilterRaid1() {
@@ -152,12 +191,17 @@ function preFilterRaid1() {
   });
 }
 
-function filterRaid1(character) {
-  if (character.activities === "raid1") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterRaid1() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const raid1Characters = characters.filter(
+    (character) => character.activities.raid1
+  );
+  console.log(raid1Characters);
+  return raid1Characters;
 }
 
 function preFilterRaid2() {
@@ -172,12 +216,17 @@ function preFilterRaid2() {
   });
 }
 
-function filterRaid2(character) {
-  if (character.activities === "raid2") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterRaid2() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const raid2Characters = characters.filter(
+    (character) => character.activities.raid2
+  );
+  console.log(raid2Characters);
+  return raid2Characters;
 }
 
 function preFilterRaid3() {
@@ -192,12 +241,17 @@ function preFilterRaid3() {
   });
 }
 
-function filterRaid3(character) {
-  if (character.activities === "raid3") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterRaid3() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const raid3Characters = characters.filter(
+    (character) => character.activities.raid3
+  );
+  console.log(raid3Characters);
+  return raid3Characters;
 }
 
 function preFilterPVP1() {
@@ -212,19 +266,24 @@ function preFilterPVP1() {
   });
 }
 
-function filterPVP1(character) {
-  if (character.activities === "pvp1") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterPVP1() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const pvp1Characters = characters.filter(
+    (character) => character.activities.pvp1
+  );
+  console.log(pvp1Characters);
+  return pvp1Characters;
 }
 
 function preFilterPVP2() {
   const checkbox = document.getElementById("pvp2");
   checkbox.addEventListener("change", (event) => {
     if (event.target.checked) {
-      console.log("PVP2 Checkbox is checked");
+      console.log("Checkbox is checked");
       filterPVP2();
     } else {
       console.log("Checkbox is unchecked");
@@ -232,19 +291,24 @@ function preFilterPVP2() {
   });
 }
 
-function filterPVP2(character) {
-  if (character.activities === "pvp2") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterPVP2() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const pvp2Characters = characters.filter(
+    (character) => character.activities.pvp2
+  );
+  console.log(pvp2Characters);
+  return pvp2Characters;
 }
 
 function preFilterTransmogAndMounts() {
   const checkbox = document.getElementById("transmogAndMounts");
   checkbox.addEventListener("change", (event) => {
     if (event.target.checked) {
-      console.log("transmogAndMounts Checkbox is checked");
+      console.log("Checkbox is checked");
       filterTransmogAndMounts();
     } else {
       console.log("Checkbox is unchecked");
@@ -252,10 +316,15 @@ function preFilterTransmogAndMounts() {
   });
 }
 
-function filterTransmogAndMounts(character) {
-  if (character.activities === "transmogAndMounts") {
-    return true;
-  } else {
-    return false;
-  }
+async function filterTransmogAndMounts() {
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+
+  const transmogAndMountsCharacters = characters.filter(
+    (character) => character.activities.transmogAndMounts
+  );
+  console.log(transmogAndMountsCharacters);
+  return transmogAndMountsCharacters;
 }
