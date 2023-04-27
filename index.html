@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
-      <title>wow crud app form test</title>
-   </head>
-   <body>
-    <!-- Form -->
-      <div>
-         <form id="completeForm">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>crud app udkast</title>
+</head>
+<body>
+    <header>
+        <h1>wow crud app</h1>
+        <button id="btn-add-character"> Add a character</button>
+        <input type="checkbox" name="test" id="test" value=""/>
+    </header>
+    <!-- Class grid -->
+    <div id="classes" class="class-grid"></div>
+    <!-- Character grid -->
+    <div id="characters" class="character-grid"></div>
+
+    <!-- Add character dialog and form -->
+    <dialog id="dialog-add-character">
+        <form id="form-add-character">
             <section id="characterInformation">
                 <!-- Character name -->
                <label for="characterName"> Character Name </label>
                <input type="text" name="characterName" id="characterName" /> </br></br>
                 <!-- Character race -->
-                <section id="raceOptionGrid">
-                    <label for="race">What is the race of your character?</label>
-                    <select id="race">
-                        <option>Human</option>
-                        <option>Dwarf</option>
-                        <option>Night Elf</option>
-                        <option>Gnome</option>
-                        <option>Draenei</option>
-                        <option>Worgen</option>
-                        <option>Orc</option>
-                        <option>Undead</option>
-                        <option>Tauren</option>
-                        <option>Troll</option>
-                        <option>Blood Elf</option>
-                        <option>Goblin</option>
-                        <option>Pandaren</option>
-                        <option>Dracthyr</option>
-                        <option>Void Elf</option>
-                        <option>Lightforged Draenei</option>
-                        <option>Dark Iron Dwarf</option>
-                        <option>Kul Tiran</option>
-                        <option>Mecha Gnome</option>
-                        <option>Nightborne</option>
-                        <option>Highmountain Tauren</option>
-                        <option>Mag'har Orc</option>
-                        <option>Zandalari Troll</option>
-                        <option>Vulpera</option>
-                    </select>
-                    <!-- <input type="text" name="race" id="race"> -->
-                    <label for="side"></label>
-                    <select id="side">
-                        <option>Alliance</option>
-                        <option>Horde</option>
-                    </select>
-                </section></br>
+                <label for="race">What is the race of your character?</label>
+                <select id="race">
+                    <option>Human</option>
+                    <option>Dwarf</option>
+                    <option>Night Elf</option>
+                    <option>Gnome</option>
+                    <option>Draenei</option>
+                    <option>Worgen</option>
+                    <option>Orc</option>
+                    <option>Undead</option>
+                    <option>Tauren</option>
+                    <option>Troll</option>
+                    <option>Blood Elf</option>
+                    <option>Goblin</option>
+                    <option>Pandaren</option>
+                    <option>Dracthyr</option>
+                    <option>Void Elf</option>
+                    <option>Lightforged Draenei</option>
+                    <option>Dark Iron Dwarf</option>
+                    <option>Kul Tiran</option>
+                    <option>Mecha Gnome</option>
+                    <option>Nightborne</option>
+                    <option>Highmountain Tauren</option>
+                    <option>Mag'har Orc</option>
+                    <option>Zandalari Troll</option>
+                    <option>Vulpera</option>
+                </select>
+                <!-- <input type="text" name="race" id="race"> -->
+                <label for="faction"></label>
+                <select id="faction">
+                    <option>Alliance</option>
+                    <option>Horde</option>
+                </select></br></br>
                 <!-- Class -->
                 <label for="class">Pick your Class</label>
                 <select id="class">
@@ -69,21 +77,73 @@
                     <option value="evoker">Evoker</option>
                 </select> </br></br>
                 <!-- Specialization and Role -->
-                <label for="spec"> Write your Specialization</label>
-                <input type="text" name="spec" id="spec"></br></br>
+                <label for="spec"> Choose your Specialization</label>
                 <select id="specialization">
-                    <option value="">Choose your Specialization</option>
-                    <optgroup label="Warrior">
+                    <optgroup id="optionsWarrior" label="Warrior">
                         <option value="arms"> Arms </option>
                         <option value="fury"> Fury </option>
                         <option value="protection"> Protection </option>
                     </optgroup>
-                    <optgroup label="Paladin">
+                    <optgroup id="optionsPaladin" label="Paladin">
                         <option value="protection"> Protection </option>
                         <option value="retribution"> Retribution </option>
                         <option value="holy"> Holy </option>
                     </optgroup>
-                </select>
+                    <optgroup id="optionsHunter" label="Hunter">
+                        <option value="beastMastery"> Beast Mastery </option>
+                        <option value="marksmanship"> Marksmanship </option>
+                        <option value="survival"> Survival </option>
+                    </optgroup>
+                    <optgroup id="optionsRogue" label="Rogue">
+                        <option value="assassination"> Assassination </option>
+                        <option value="outlaw"> Outlaw </option>
+                        <option value="subtlety"> Subtlety </option>
+                    </optgroup>
+                    <optgroup id="optionsPriest" label="Priest">
+                        <option value="discipline"> Discipline </option>
+                        <option value="holy"> Holy </option>
+                        <option value="shadow"> Shadow </option>
+                    </optgroup>
+                    <optgroup id="optionsShaman" label="Shaman">
+                        <option value="elemental"> Elemental </option>
+                        <option value="enhancement"> Enhancement </option>
+                        <option value="restoration"> Restoration </option>
+                    </optgroup>
+                    <optgroup id="optionsMage" label="Mage">
+                        <option value="arcane"> Arcane </option>
+                        <option value="fire"> Fire </option>
+                        <option value="frost"> Frost </option>
+                    </optgroup>
+                    <optgroup id="optionsWarlock" label="Warlock">
+                        <option value="affliction"> Affliction </option>
+                        <option value="demonology"> Demonology </option>
+                        <option value="destruction"> Destruction </option>
+                    </optgroup>
+                    <optgroup id="optionsMonk" label="Monk">
+                        <option value="brewmaster"> Brewmaster </option>
+                        <option value="mistweaver"> Mistweaver </option>
+                        <option value="windwalker"> Windwalker </option>
+                    </optgroup>
+                    <optgroup id="optionsDruid" label="Druid">
+                        <option value="balance"> Balance </option>
+                        <option value="feral"> Feral </option>
+                        <option value="guardian"> Guardian </option>
+                        <option value="restoration"> Restoration </option>
+                    </optgroup>
+                    <optgroup id="optionsDemonHunter" label="Demon Hunter">
+                        <option value="havoc"> Havoc </option>
+                        <option value="vengeance"> Vengeance </option>
+                    </optgroup>
+                    <optgroup id="optionsDeathKnight" label="Death Knight">
+                        <option value="blood"> Blood </option>
+                        <option value="frost"> Frost </option>
+                        <option value="unholy"> Unholy </option>
+                    </optgroup>
+                    <optgroup id="optionsEvoker" label="Evoker">
+                        <option value="devastation"> Devastation </option>
+                        <option value="preservation"> Preservation </option>
+                    </optgroup>
+                </select></br></br>
                 <label for="role"> Pick your Primary Role</label>
                 <select id="role">
                     <option>Tank</option>
@@ -136,21 +196,13 @@
                 <input type="reset" name ="btn-reset" id="btn-reset" value="Reset form">
             </section>
         </form>
-    </div>
+    </dialog>
 
-    <!-- Small dialog for character -->
-
-    <div>
-        <dialog>
-            <section>
-                <p>Hi! I am <span id="dialogName"></span></p>
-                <p>Race: <span id="dialogRace"></span></p>
-                <p>I side with the <span id="dialogSide"></span></p>
-                <p>Class: <span id="dialogName"></span></p>
-                <p>Specialization: <span id="dialogName"></span></p>
-            </section>
-        </dialog>
-    </div>
-    <script src="script.js"></script>
+    <!-- All javascript -->
+    <script src="0-start.js"></script>
+    <script src="1-get-and-show-classes.js"></script>
+    <script src="2-get-and-show-characters.js"></script>
+    <script src="3-create-new-character.js"></script>
+    <!-- <script src="99-specialization-filter.js"></script> -->
 </body>
 </html>
