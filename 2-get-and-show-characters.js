@@ -3,7 +3,7 @@
 console.log("hej2");
 
 let characters;
-
+console.log(characters);
 // fetch our character-data
 
 async function getCharacters() {
@@ -13,6 +13,8 @@ async function getCharacters() {
   console.log(characters);
   return characters;
 }
+
+// export { getCharacters };
 
 function showCharacter(character) {
   const html = /* html */ `

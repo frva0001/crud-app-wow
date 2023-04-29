@@ -13,6 +13,8 @@ async function getClasses() {
   return wowClasses;
 }
 
+export { getClasses };
+
 function showClass(wowClass) {
   const html = /* html */ `
         <article class="class-grid-item">
