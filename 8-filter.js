@@ -1,25 +1,6 @@
 "use strict";
 // window.addEventListener("load", start);
 
-<<<<<<< Updated upstream
-function start() {
-  allPreFilterEvents();
-  getCharacters();
-}
-
-async function getCharacters() {
-  const response = await fetch(`${endpoint}/characters.json`);
-  const data = await response.json();
-  const characters = prepareData(data);
-  console.log(characters);
-  return characters;
-}
-=======
-// function start() {
-//    allPreFilterEvents();
-// }
->>>>>>> Stashed changes
-
 function allPreFilterEvents() {
    preFilterLeveling();
    preFilterQuesting();
@@ -47,7 +28,6 @@ function preFilterLeveling() {
    });
 }
 
-<<<<<<< Updated upstream
 async function filterLeveling() {
   console.log("functionleveling");
   const response = await fetch(`${endpoint}/characters.json`);
@@ -59,14 +39,12 @@ async function filterLeveling() {
   );
   console.log(leveledCharacters);
   return leveledCharacters;
-=======
 function filterLeveling(character) {
    if (character.leveling === "leveling") {
       return true;
    } else {
       return false;
    }
->>>>>>> Stashed changes
 }
 
 function preFilterQuesting() {
