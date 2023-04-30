@@ -1,4 +1,4 @@
-header {
+.header_one {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,9 +6,82 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4b6b4d;
+  background-color: #4b6b4dbe;
   height: 50px;
 }
+
+.header_two {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4b6b4da1;
+  height: 50px;
+}
+
+.search_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 1px solid black;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+#btn-add-character {
+  margin: 20px;
+  top: 0%;
+  right: 30%;
+  height: 4vh;
+  background-color: #89a0b4;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#filter-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+#text-filter {
+  text-align: center;
+  font-size: larger;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+label {
+  font-size: large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 body {
   background-color: #5b7992;
   background-size: contain;
@@ -71,7 +144,7 @@ body {
   padding-right: 10px;
 }
 .class-grid {
-  margin-top: 50px;
+  margin-top: 10vh;
   background-color: #5581588b;
   height: 1000%;
   grid-area: classes;
@@ -81,7 +154,7 @@ body {
 }
 .character-grid {
   padding-left: 20px;
-  margin-top: 50px;
+  margin-top: 10vh;
   background-color: rgb(81, 122, 133);
   height: 1000%;
   grid-area: characters;

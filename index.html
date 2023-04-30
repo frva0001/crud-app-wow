@@ -8,9 +8,23 @@
     <title>crud app udkast</title>
 </head>
 <body>
-    <header>
-        <h1>actual crud app</h1>
-        <button id="btn-add-character"> Add a character</button>
+
+    <header class="header_one">
+        <h1>Actual Crud APP</h1><br>
+         <button id="btn-add-character"> Add a character</button>
+    <!-- Search Bar -->
+    <div class="search_bar">
+    <label for="search"></label>
+    <input type="search" id="input-search" placeholder="Search Here">    </div>
+    <div class="cards">
+        <div class="header"> </div>
+        <div class="body"> </div>
+    </div>
+ 
+    </header>
+    <header id="filter-header" class="header_two">
+        <div id="text-filter"> Filters:</div>
+        <div id="filters">
         <input type="checkbox" name="activities" id="leveling" value="Leveling and BFA dungeons" />
         <label for="activities">Activities</label>
         <input type="checkbox" name= "questing" id="questing">
@@ -35,7 +49,10 @@
         <label for="pvp2">2v2, 3v3</label>
         <input type="checkbox" id="transmogAndMounts">
         <label for="transmogAndMounts">Transmog & Mounts</label>
+</div>
     </header>
+
+
     <!-- Class grid -->
     <div id="classes" class="class-grid"></div>
     <!-- Character grid -->
