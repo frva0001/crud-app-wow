@@ -16,6 +16,7 @@ async function getCharacters() {
 
 // export { getCharacters };
 
+//Når du opdaterer denne function, kan du så copy-paste den ind i filter.js?
 function showCharacter(character) {
   const html = /* html */ `
         <article class="character-grid-item">

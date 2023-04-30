@@ -1,35 +1,70 @@
 "use strict";
-// window.addEventListener("load", start);
+window.addEventListener("load", start);
 
 function start() {
-   allPreFilterEvents();
+  allPreFilterEvents();
+  getCharacters();
+}
+
+async function getCharacters() {
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
+  console.log(characters);
+  return characters;
+}
+
+function showCharacter(character) {
+  const html = /* html */ `
+        <article class="character-grid-item">
+            <h3>${character.id}<h3>
+            <h3>${character.activities}<h3>
+        </article>
+    `;
+
+  document.querySelector("#characters").insertAdjacentHTML("beforeend", html);
 }
 
 function allPreFilterEvents() {
-   preFilterLeveling();
-   preFilterQuesting();
-   preFilterMythicPlus1();
-   preFilterMythicPlus2();
-   preFilterMythicPlus3();
-   preFilterMythicPlus4();
-   preFilterRaid1();
-   preFilterRaid2();
-   preFilterRaid3();
-   preFilterPVP1();
-   preFilterPVP2();
-   preFilterTransmogAndMounts();
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", (event) => {
+      if (event.target.checked) {
+        checkboxes.forEach((otherCheckbox) => {
+          if (otherCheckbox !== checkbox) {
+            otherCheckbox.checked = false;
+          }
+        });
+      }
+    });
+  });
+  preFilterLeveling();
+  preFilterQuesting();
+  preFilterMythicPlus1();
+  preFilterMythicPlus2();
+  preFilterMythicPlus3();
+  preFilterMythicPlus4();
+  preFilterRaid1();
+  preFilterRaid2();
+  preFilterRaid3();
+  preFilterPVP1();
+  preFilterPVP2();
+  preFilterTransmogAndMounts();
 }
 
 function preFilterLeveling() {
-   const checkbox = document.getElementById("leveling");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterLeveling();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("leveling");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const leveledCharacters = await filterLeveling();
+      showCharacters(leveledCharacters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterLeveling() {
@@ -43,28 +78,25 @@ async function filterLeveling() {
   );
   console.log(leveledCharacters);
   return leveledCharacters;
-function filterLeveling(character) {
-   if (character.leveling === "leveling") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterQuesting() {
-   const checkbox = document.getElementById("questing");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterQuesting();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("questing");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const questingCharacters = await filterQuesting();
+      showCharacters(questingCharacters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterQuesting() {
-  console.log("functionleveling");
+  console.log("functionQuesting");
   const response = await fetch(`${endpoint}/characters.json`);
   const data = await response.json();
   const characters = prepareData(data);
@@ -74,24 +106,33 @@ async function filterQuesting() {
   );
   console.log(questingCharacters);
   return questingCharacters;
-function filterQuesting(character) {
-   if (character.activities === "questing") {
-      return true;
-   } else {
-      return false;
-   }
+}
+
+function showCharacters(characters) {
+  clearCharacters();
+
+  characters.forEach((character) => {
+    showCharacter(character);
+  });
+}
+
+function clearCharacters() {
+  document.querySelector("#characters").innerHTML = "";
 }
 
 function preFilterMythicPlus1() {
-   const checkbox = document.getElementById("mythicPlus1");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterMythicPlus1();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("mythicPlus1");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const mythicPlus1Characters = await filterMythicPlus1();
+      showCharacters(mythicPlus1Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterMythicPlus1() {
@@ -105,24 +146,21 @@ async function filterMythicPlus1() {
   );
   console.log(mythicPlus1Characters);
   return mythicPlus1Characters;
-function filterMythicPlus1(character) {
-   if (character.activities === "mythicPlus1") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterMythicPlus2() {
-   const checkbox = document.getElementById("mythicPlus2");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterMythicPlus2();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("mythicPlus2");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const mythicPlus2Characters = await filterMythicPlus2();
+      showCharacters(mythicPlus2Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterMythicPlus2() {
@@ -136,24 +174,21 @@ async function filterMythicPlus2() {
   );
   console.log(mythicPlus2Characters);
   return mythicPlus2Characters;
-function filterMythicPlus2(character) {
-   if (character.activities === "mythicPlus2") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterMythicPlus3() {
-   const checkbox = document.getElementById("mythicPlus3");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterMythicPlus3();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("mythicPlus3");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const mythicPlus3Characters = await filterMythicPlus3();
+      showCharacters(mythicPlus3Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterMythicPlus3() {
@@ -167,24 +202,21 @@ async function filterMythicPlus3() {
   );
   console.log(mythicPlus3Characters);
   return mythicPlus3Characters;
-function filterMythicPlus1(character) {
-   if (character.activities === "mythicPlus3") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterMythicPlus4() {
-   const checkbox = document.getElementById("mythicPlus4");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterMythicPlus4();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("mythicPlus4");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const mythicPlus4Characters = await filterMythicPlus4();
+      showCharacters(mythicPlus4Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterMythicPlus4() {
@@ -198,24 +230,21 @@ async function filterMythicPlus4() {
   );
   console.log(mythicPlus4Characters);
   return mythicPlus4Characters;
-function filterMythicPlus4(character) {
-   if (character.activities === "mythicPlus4") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterRaid1() {
-   const checkbox = document.getElementById("raid1");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterRaid1();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("raid1");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const raid1Characters = await filterRaid1();
+      showCharacters(raid1Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterRaid1() {
@@ -229,24 +258,21 @@ async function filterRaid1() {
   );
   console.log(raid1Characters);
   return raid1Characters;
-function filterRaid1(character) {
-   if (character.activities === "raid1") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterRaid2() {
-   const checkbox = document.getElementById("raid2");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterRaid2();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("raid2");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const raid2Characters = await filterRaid2();
+      showCharacters(raid2Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterRaid2() {
@@ -260,162 +286,115 @@ async function filterRaid2() {
   );
   console.log(raid2Characters);
   return raid2Characters;
-function filterRaid2(character) {
-   if (character.activities === "raid2") {
-      return true;
-   } else {
-      return false;
-   }
 }
 
 function preFilterRaid3() {
-   const checkbox = document.getElementById("raid3");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterRaid3();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("raid3");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const raid3Characters = await filterRaid3();
+      showCharacters(raid3Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterRaid3() {
-   console.log("functionleveling");
-   const response = await fetch(`${endpoint}/characters.json`);
-   const data = await response.json();
-   const characters = prepareData(data);
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
 
-   const raid3Characters = characters.filter(
-      (character) => character.activities.raid3
-   );
-   console.log(raid3Characters);
-   return raid3Characters;
-   function filterRaid3(character) {
-      if (character.activities === "raid3") {
-         return true;
-      } else {
-         return false;
-      }
-   }
+  const raid3Characters = characters.filter(
+    (character) => character.activities.raid3
+  );
+  console.log(raid3Characters);
+  return raid3Characters;
+}
 
 function preFilterPVP1() {
-   const checkbox = document.getElementById("pvp1");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterPVP1();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("pvp1");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const PVP1Characters = await filterPVP1();
+      showCharacters(PVP1Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterPVP1() {
-   console.log("functionleveling");
-   const response = await fetch(`${endpoint}/characters.json`);
-   const data = await response.json();
-   const characters = prepareData(data);
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
 
-   const pvp1Characters = characters.filter(
-      (character) => character.activities.pvp1
-   );
-   console.log(pvp1Characters);
-   return pvp1Characters;
+  const pvp1Characters = characters.filter(
+    (character) => character.activities.pvp1
+  );
+  console.log(pvp1Characters);
+  return pvp1Characters;
 }
 
 function preFilterPVP2() {
-   const checkbox = document.getElementById("pvp2");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterPVP2();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("pvp2");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const PVP2Characters = await filterPVP2();
+      showCharacters(PVP2Characters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
-
 async function filterPVP2() {
-   console.log("functionleveling");
-   const response = await fetch(`${endpoint}/characters.json`);
-   const data = await response.json();
-   const characters = prepareData(data);
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
 
-   const pvp2Characters = characters.filter(
-      (character) => character.activities.pvp2
-   );
-   console.log(pvp2Characters);
-   return pvp2Characters;
+  const pvp2Characters = characters.filter(
+    (character) => character.activities.pvp2
+  );
+  console.log(pvp2Characters);
+  return pvp2Characters;
 }
 
 function preFilterTransmogAndMounts() {
-   const checkbox = document.getElementById("transmogAndMounts");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("Checkbox is checked");
-         filterTransmogAndMounts();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
+  const checkbox = document.getElementById("transmogAndMounts");
+  checkbox.addEventListener("change", async (event) => {
+    if (event.target.checked) {
+      console.log("Checkbox is checked");
+      const transmogAndMountsCharacters = await filterTransmogAndMounts();
+      showCharacters(transmogAndMountsCharacters);
+    } else {
+      console.log("Checkbox is unchecked");
+      const allCharacters = await getCharacters();
+      showCharacters(allCharacters);
+    }
+  });
 }
 
 async function filterTransmogAndMounts() {
-   console.log("functionleveling");
-   const response = await fetch(`${endpoint}/characters.json`);
-   const data = await response.json();
-   const characters = prepareData(data);
+  console.log("functionleveling");
+  const response = await fetch(`${endpoint}/characters.json`);
+  const data = await response.json();
+  const characters = prepareData(data);
 
-   const transmogAndMountsCharacters = characters.filter(
-      (character) => character.activities.transmogAndMounts
-   );
-   console.log(transmogAndMountsCharacters);
-   return transmogAndMountsCharacters;
-   function filterPVP1(character) {
-      if (character.activities === "pvp1") {
-         return true;
-      } else {
-         return false;
-      }
-   }
+  const transmogAndMountsCharacters = characters.filter(
+    (character) => character.activities.transmogAndMounts
+  );
+  console.log(transmogAndMountsCharacters);
+  return transmogAndMountsCharacters;
 }
-
-function preFilterPVP2() {
-   const checkbox = document.getElementById("pvp2");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("PVP2 Checkbox is checked");
-         filterPVP2();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
-}
-
-function filterPVP2(character) {
-   if (character.activities === "pvp2") {
-      return true;
-   } else {
-      return false;
-   }
-}
-
-function preFilterTransmogAndMounts() {
-   const checkbox = document.getElementById("transmogAndMounts");
-   checkbox.addEventListener("change", (event) => {
-      if (event.target.checked) {
-         console.log("transmogAndMounts Checkbox is checked");
-         filterTransmogAndMounts();
-      } else {
-         console.log("Checkbox is unchecked");
-      }
-   });
-}
-function filterTransmogAndMounts(character) {
-   if (character.activities === "transmogAndMounts") {
-      return true;
-   } else {
-      return false;
-   }
-}}
