@@ -242,12 +242,197 @@
         </form>
     </dialog>
 
+    <!-- Update character dialog and form -->
+    <dialog id="dialog-update-character">
+     <p id="first_update_char">Update Character</p>
+
+        <form id="form-update-character">
+
+            <section id="characterInformationUpdate">
+                <!-- Character name -->
+               <label for="updateName"> Character Name </label>
+               <input type="text" name="updateName" id="updateName"/> </br></br>
+                <!-- Character race -->
+                <label for="updateRace">What is the race of your character?</label>
+                <select id="updateRace">
+                    <option>Human</option>
+                    <option>Dwarf</option>
+                    <option>Night Elf</option>
+                    <option>Gnome</option>
+                    <option>Draenei</option>
+                    <option>Worgen</option>
+                    <option>Orc</option>
+                    <option>Undead</option>
+                    <option>Tauren</option>
+                    <option>Troll</option>
+                    <option>Blood Elf</option>
+                    <option>Goblin</option>
+                    <option>Pandaren</option>
+                    <option>Dracthyr</option>
+                    <option>Void Elf</option>
+                    <option>Lightforged Draenei</option>
+                    <option>Dark Iron Dwarf</option>
+                    <option>Kul Tiran</option>
+                    <option>Mecha Gnome</option>
+                    <option>Nightborne</option>
+                    <option>Highmountain Tauren</option>
+                    <option>Mag'har Orc</option>
+                    <option>Zandalari Troll</option>
+                    <option>Vulpera</option>
+                </select>
+                <!-- <input type="text" name="race" id="race"> -->
+                <label for="updateFaction"></label>
+                <select id="updateFaction">
+                    <option>Alliance</option>
+                    <option>Horde</option>
+                </select></br></br>
+                <!-- Class -->
+                <label for="updateClass">Pick your Class</label>
+                <select id="updateClass">
+                    <option value="warrior">Warrior</option>
+                    <option value="paladin">Paladin</option>
+                    <option valie="hunter">Hunter</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="priest">Priest</option>
+                    <option value="shaman"> Shaman</option>
+                    <option value="mage">Mage</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="monk">Monk</option>
+                    <option value="druid">Druid</option>
+                    <option value="demonHunter">Demon Hunter</option>
+                    <option value="deathKnight">Death Knight</option>
+                    <option value="evoker">Evoker</option>
+                </select> </br></br>
+                <!-- Specialization and Role -->
+                <label for="updateSpecialization"> Choose your Specialization</label>
+                <select id="updateSpecialization">
+                    <optgroup id="optionsWarrior" label="Warrior">
+                        <option value="arms"> Arms </option>
+                        <option value="fury"> Fury </option>
+                        <option value="protection"> Protection </option>
+                    </optgroup>
+                    <optgroup id="optionsPaladin" label="Paladin">
+                        <option value="protection"> Protection </option>
+                        <option value="retribution"> Retribution </option>
+                        <option value="holy"> Holy </option>
+                    </optgroup>
+                    <optgroup id="optionsHunter" label="Hunter">
+                        <option value="beastMastery"> Beast Mastery </option>
+                        <option value="marksmanship"> Marksmanship </option>
+                        <option value="survival"> Survival </option>
+                    </optgroup>
+                    <optgroup id="optionsRogue" label="Rogue">
+                        <option value="assassination"> Assassination </option>
+                        <option value="outlaw"> Outlaw </option>
+                        <option value="subtlety"> Subtlety </option>
+                    </optgroup>
+                    <optgroup id="optionsPriest" label="Priest">
+                        <option value="discipline"> Discipline </option>
+                        <option value="holy"> Holy </option>
+                        <option value="shadow"> Shadow </option>
+                    </optgroup>
+                    <optgroup id="optionsShaman" label="Shaman">
+                        <option value="elemental"> Elemental </option>
+                        <option value="enhancement"> Enhancement </option>
+                        <option value="restoration"> Restoration </option>
+                    </optgroup>
+                    <optgroup id="optionsMage" label="Mage">
+                        <option value="arcane"> Arcane </option>
+                        <option value="fire"> Fire </option>
+                        <option value="frost"> Frost </option>
+                    </optgroup>
+                    <optgroup id="optionsWarlock" label="Warlock">
+                        <option value="affliction"> Affliction </option>
+                        <option value="demonology"> Demonology </option>
+                        <option value="destruction"> Destruction </option>
+                    </optgroup>
+                    <optgroup id="optionsMonk" label="Monk">
+                        <option value="brewmaster"> Brewmaster </option>
+                        <option value="mistweaver"> Mistweaver </option>
+                        <option value="windwalker"> Windwalker </option>
+                    </optgroup>
+                    <optgroup id="optionsDruid" label="Druid">
+                        <option value="balance"> Balance </option>
+                        <option value="feral"> Feral </option>
+                        <option value="guardian"> Guardian </option>
+                        <option value="restoration"> Restoration </option>
+                    </optgroup>
+                    <optgroup id="optionsDemonHunter" label="Demon Hunter">
+                        <option value="havoc"> Havoc </option>
+                        <option value="vengeance"> Vengeance </option>
+                    </optgroup>
+                    <optgroup id="optionsDeathKnight" label="Death Knight">
+                        <option value="blood"> Blood </option>
+                        <option value="frost"> Frost </option>
+                        <option value="unholy"> Unholy </option>
+                    </optgroup>
+                    <optgroup id="optionsEvoker" label="Evoker">
+                        <option value="devastation"> Devastation </option>
+                        <option value="preservation"> Preservation </option>
+                    </optgroup>
+                </select></br></br>
+                <label for="updateRole"> Pick your Primary Role</label>
+                <select id="updateRole">
+                    <option>Tank</option>
+                    <option>Healer</option>
+                    <option>Ranged</option>
+                    <option>Meele</option>
+                </select></br></br>
+                <!-- Item Level and Level-->
+                <label for="updateItemLevel">Item Level</label>
+                <input type="number" name="updateItemLevel" id="updateItemLevel"></br></br>
+                <label for="updateLevel">Level</label>
+                <input type="number" name="updateLevel" id="updateLevel"></br></br>
+            </section>
+            <section id="updatePersonalInformation">
+                <!-- Motive -->
+                <label for="motive">Things I would like to do with my character</label> </br></br>
+                <input type="checkbox" name="activities" id="leveling" value="Leveling and BFA dungeons" />
+                <label for="leveling"> Leveling and BFA dungeons</label></br>
+                <input type="checkbox" name="activities" id="questing" value="Questing" />
+                <label for="questing"> Questing </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus1" value="Mythic+, key 1-10"/>
+                <label for="mythicPlus1"> Mythic+, key 1-10 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus2" value="Mythic+, key 10-15" />
+                <label for="mythicPlus2"> Mythic+, key 10-15 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus3" value="Mythic+, key 15-20"/>
+                <label for="mythicPlus3"> Mythic+, key 15-20 </label></br>
+                <input type="checkbox" name="activities" id="mythicPlus4" value="Mythic+, key 20 and above"/>
+                <label for="mythicPlus4"> Mythic+, key 20 and above </label></br>
+                <input type="checkbox" name="activities" id="raid1" value="Vault of the Incarnates Normal" />
+                <label for="raid1"> Vault of the Incarnates Normal</label></br>
+                <input type="checkbox" name="activities" id="raid2" value="Vault of the Incarnates Heroic"/>
+                <label for="raid2"> Vault of the Incarnates Heroic</label></br>
+                <input type="checkbox" name="activities" id="raid3" value="Vault of the Incarnates Mythic"/>
+                <label for="raid3"> Vault of the Incarnates Mythic </label></br>
+                <input type="checkbox" name="activities" id="pvp1" value="Battlegrounds 10v10, 15v15"/>
+                <label for="pvp1"> Battlegrounds 10v10, 15v15 </label></br>
+                <input type="checkbox" name="activities" id="pvp2" value="Arenas 2v2, 3v3"/>
+                <label for="pvp2">  Arenas 2v2, 3v3 </label></br>
+                <input type="checkbox" name="activities" id="transmogsAndMounts" value="Transmog Hunting and Mount Farming"/>
+                <label for="transmogsAndMounts">  Transmog Hunting and Mount Farming </label></br></br>
+                <!-- Country -->
+                <label for="updateCountry"> Where are you from? </label>
+                <input type="text" name="updateCountry" id="updateCountry"></br></br>
+                <!-- Battelnet -->
+                <label for="updateBattletag"> Whats your battletag? </label>
+                <input type="text" name="updateBattletag" id="updateBattletag"></br></br>
+            </section>
+            <section id="buttons">
+                <input type="submit" name="btn-update" id="btn-update" value="Update Character">
+                <input type="reset" name ="btn-reset" id="btn-reset" value="Reset form">
+                <button id="btn-close-window">Close</button>
+            </section>
+        </form>
+    </dialog>
+
     <!-- All javascript -->
     <script src="0-start.js"></script>
     <script src="1-get-and-show-classes.js"></script>
     <script src="2-get-and-show-characters.js"></script>
     <script src="3-create-new-character.js"></script>
     <script src ="8-filter.js"></script>
+    <script src="100-update.js"></script>
     <!-- <script src="99-specialization-filter.js"></script> -->
 </body>
 </html>

@@ -15,6 +15,7 @@ function start() {
    // all click events gets added here eventually.
    document.querySelector("#btn-add-character").addEventListener("click", showAddCharacterDialog);
    document.querySelector("#form-add-character").addEventListener("submit", addCharacterClicked);
+   document.querySelector("#form-update-character").addEventListener("submit", updateCharacterClicked);
 }
 
 // putting our data into an array (always necessary)
