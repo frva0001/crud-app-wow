@@ -2,8 +2,6 @@
 
 console.log("hej3");
 
-displayData();
-
 function showAddCharacterDialog() {
    document.querySelector("#dialog-add-character").showModal();
 }
