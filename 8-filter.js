@@ -18,7 +18,6 @@ function showCharacter(character) {
   const html = /* html */ `
         <article class="character-grid-item">
             <h3>${character.id}<h3>
-            <h3>${character.activities}<h3>
         </article>
     `;
 
