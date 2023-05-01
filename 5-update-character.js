@@ -67,3 +67,5 @@ export async function deleteCharacter(ID) {
     throw new Error(`Error at deleteCharacter: ${things}`);
   }
 }
+
+//update
