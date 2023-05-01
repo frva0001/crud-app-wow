@@ -1,21 +1,14 @@
 "use strict";
 
-document
-  .querySelector("#characters article:last-child .btn-delete-character")
-  .addEventListener("click", deleteClicked);
-
-function deleteClicked() {
-  document.querySelector("#dialog-delete-post-title").textContent =
-    character.title;
-  document
-    .querySelector("#form-delete-post")
-    .setAttribute("data-id", character.id);
-  document.querySelector("#dialog-delete-post").showModal();
-}
-
 function deletePostClicked(event) {
   const id = event.target.getAttribute("data-id"); // event.target is the delete form
-  deletePost(id); // call deletePost with id
+  console.log(id, "id");
+
+  if (event.submitter.innerHTML === "Yes") {
+    deletePost(id); // call deletePost with id
+  }
+
+  document.querySelector("#dialog-delete-post").close();
 }
 
 async function deletePost(id) {
