@@ -145,6 +145,7 @@ body {
 }
 .class-grid {
   margin-top: 10vh;
+
   background-color: #5581588b;
   height: 1000%;
   grid-area: classes;
@@ -167,12 +168,12 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-#btn-update-character {
+.btn-update-character {
   height: 4vh;
   border-radius: 1px;
   background-color: #89a0b4;
 }
-#btn-delete-character {
+.btn-delete-character {
   height: 4vh;
   border-radius: 1px;
   background-color: rgb(136, 189, 172);
