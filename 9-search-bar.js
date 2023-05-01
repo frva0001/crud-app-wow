@@ -1,4 +1,29 @@
-window.addEventListener("load", start);
+// get search bar element
+const searchInput = document.getElementById("searchInput");
+
+//store name elements in array
+const namesFromDOM = document.getElementsByClassName("character-grid-item");
+
+//listen
+searchInput.addEventListener("keyup", (event) => {
+  const { value } = event.target;
+
+  const searchQuery = value;
+
+  for (const nameElement of namesFromDOM) {
+    //store grid item text and convert to lowercase
+    let name = nameElement.textContent.toLowerCase();
+    //compare to search
+    if (name.includes(searchQuery)) {
+      nameElement.style.display = "block";
+    } else {
+      // NOT found
+      nameElement.style.display = "none";
+    }
+  }
+});
+
+/*window.addEventListener("load", start);
 
 start();
 {
@@ -33,10 +58,10 @@ const search = () => {
   const searchbox = document.getelementById("search_bar").value.toLowerCase();
   const storeItems = docuemnt.getelementById("characters");
   const product = document.querySelector(".character-grid-item");
-  const pname = document.getElementsByTagName("h3");
+  const pname = document.getElementsByTagName("p");
 
   for (var i = 0; i < pname.length; i++) {
-    let match = product[i].getElementsByTagName("h3")[0];
+    let match = product[i].getElementsByTagName("p")[0];
 
     if (match) {
       let textvalue = match.textContent || match.innerHTML;
