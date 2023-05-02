@@ -416,7 +416,7 @@ function uncheckAllOthers() {
   const checkboxes = document.querySelectorAll("input[type='checkbox']");
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("click", (event) => {
-      if (event.target.checked) {
+      if (modalOpen === false && event.target.checked) {
         checkboxes.forEach((otherCheckbox) => {
           if (otherCheckbox !== checkbox) {
             otherCheckbox.checked = false;
