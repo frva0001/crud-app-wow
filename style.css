@@ -168,6 +168,16 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+#characters .character-grid-item {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgb(105, 140, 164);
+  margin-bottom: 10px;
+  list-style-type: none;
+  border: 2px solid pink;
+}
+
 .btn-update-character {
   height: 4vh;
   border-radius: 1px;

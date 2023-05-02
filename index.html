@@ -13,14 +13,13 @@
         <h1>Actual Crud APP</h1><br>
          <button id="btn-add-character"> Add a character</button>
     <!-- Search Bar -->
-    <div class="search_bar">
-    <label for="search"></label>
-    <input type="search" id="input-search" placeholder="Search Here">    </div>
-    <div class="cards">
-        <div class="header"> </div>
-        <div class="body"> </div>
-    </div>
- 
+
+       <div id="container">
+        <div id="search">
+            <label for="searchInput">Find <i class="fa fa-search"></i>user</label>
+            <input id="searchInput" type="text" placeholder="Search">
+        </div>
+
     </header>
     <header id="filter-header" class="header_two">
         <div id="text-filter"> Filters:</div>
@@ -419,10 +418,20 @@
                 <input type="text" name="updateBattletag" id="updateBattletag"></br></br>
             </section>
             <section id="buttons">
-                <input type="submit" name="btn-update" id="btn-update" value="Update Character">
-                <input type="reset" name ="btn-reset" id="btn-reset" value="Reset form">
+                <button>Update Character</button>
+                <button>Reset form</button>
                 <button id="btn-close-window">Close</button>
             </section>
+        </form>
+    </dialog>
+
+    <!-- dialog - delete post -->
+    <dialog id="dialog-delete-post">
+        <h2>Do you want to delete post?</h2>
+        <p id="dialog-delete-post-title">Title of post</p>
+        <form method="dialog" id="form-delete-post">
+            <button>No</button>
+            <button>Yes</button>
         </form>
     </dialog>
 
@@ -432,6 +441,7 @@
     <script src="2-get-and-show-characters.js"></script>
     <script src="3-create-new-character.js"></script>
     <!-- <script src="5-update-character.js"></script> -->
+    <script src="4-delete-character.js"></script>
     <script src ="8-filter.js"></script>
     <script src="9-search-bar.js"></script>
     <script src="100-update.js"></script>
