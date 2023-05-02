@@ -12,8 +12,9 @@ function addCharacterClicked(event) {
   event.preventDefault();
 
   const form = document.querySelector("#form-add-character");
-
-  addCharacter();
+  if (event.submitter.innerHTML === "Add Character") {
+    addCharacter();
+  }
   form.reset();
   document.querySelector("#dialog-add-character").close();
   modalOpen = false;
