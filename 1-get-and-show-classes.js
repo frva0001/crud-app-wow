@@ -21,6 +21,12 @@ function showClass(wowClass) {
     `;
 
    document.querySelector("#classes").insertAdjacentHTML("beforeend", html);
+   document.querySelector("#classes article:last-child").addEventListener("click", wowClassClicked);
+   console.log("test");
+
+   function wowClassClicked() {
+      console.log("click");
+   }
 }
 
 function showClasses(wowClasses) {
@@ -30,3 +36,7 @@ function showClasses(wowClasses) {
       showClass(wowClass);
    }
 }
+
+// function wowClassClicked(wowClass) {
+//    console.log("click");
+// }
