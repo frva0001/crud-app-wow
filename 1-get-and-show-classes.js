@@ -16,7 +16,7 @@ async function getClasses() {
 function showClass(wowClass) {
    const html = /* html */ `
         <article class="class-grid-item">
-            <h3>${wowClass.id}<h3>
+            <h3>${wowClass.class}<h3>
         </article>
     `;
 

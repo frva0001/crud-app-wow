@@ -18,28 +18,58 @@ async function getCharacters() {
 function showCharacter(character) {
    const html = /* html */ `
         <article class="character-grid-item">
-            <h3>${character.id}<h3>
-            <p>${character.characterName}<h3>
-            <p>${character.activities.questing}<p>
+            <h3>${character.characterName}<h3>
+            <h3>${character.level}<h3>
+            <h3>${character.itemLevel}<h3>
+            ${isActive(character)}
             <button class="btn-update-character">Update character</button>
             <button class="btn-delete-character">Delete character</button>
         </article>
     `;
 
    function isActive(character) {
-      if (character.activites.leveling) {
-         document.querySelector("#character-grid-item").insertAdjacentHTML("beforeend", "Leveling and BFA Dungeons");
+      console.log(character);
+      let html1 = "";
+      if (character.activities.leveling) {
+         html1 += `<p>Leveling and BFA Dungeons</p>`;
       }
-      if (character.activites.questing) {
-         document.querySelector("#character-grid-item").insertAdjacentHTML("beforeend", "Questing");
+      if (character.activities.questing) {
+         html1 += `<p>Questing</p>`;
       }
-      if (character.activites.mythicPlus1) {
-         document.querySelector("#character-grid-item").insertAdjacentHTML("beforeend", "Mythic Plus 0-10");
+      if (character.activities.mythicPlus1) {
+         html1 += `<p>Mythic Plus Key 0-10</p>`;
       }
+      if (character.activities.mythicPlus2) {
+         html1 += `<p>Mythic Plus Key 10-15</p>`;
+      }
+      if (character.activities.mythicPlus3) {
+         html1 += `<p>Mythic Plus Key 15-20</p>`;
+      }
+      if (character.activities.mythicPlus4) {
+         html1 += `<p>Mythic Plus Key 20 and above</p>`;
+      }
+      if (character.activities.raid1) {
+         html1 += `<p>Normal Vault of the Incarnates</p>`;
+      }
+      if (character.activities.raid2) {
+         html1 += `<p>Heroic Vault of the Incarnates</p>`;
+      }
+      if (character.activities.raid3) {
+         html1 += `<p>Mythic Vault of the Incarnates</p>`;
+      }
+      if (character.activities.pvp1) {
+         html1 += `<p>Battelgrounds 10v10, 15v15</p>`;
+      }
+      if (character.activities.pvp2) {
+         html1 += `<p>Arenas 2v2, 3v3</p>`;
+      }
+      if (character.activities.transmogsAndMounts) {
+         html1 += `<p>Transmog hunting and Mount farming</p>`;
+      }
+
+      return html1;
    }
    document.querySelector("#characters").insertAdjacentHTML("beforeend", html);
-
-   // isActive(character);
 
    //event listeners to btns
    document.querySelector("#characters article:last-child .btn-update-character").addEventListener("click", () => updateClicked(character));
