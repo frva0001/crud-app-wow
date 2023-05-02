@@ -1,54 +1,54 @@
-window.addEventListener("load", start);
+// window.addEventListener("load", start);
 
-start();
-{
-  document
-    .querySelector("#input-search")
-    .addEventListener("keyup", inputSearchChanged);
-  document
-    .querySelector("#input-search")
-    .addEventListener("search", inputSearchChanged);
-}
+// start();
+// {
+//   document
+//     .querySelector("#input-search")
+//     .addEventListener("keyup", inputSearchChanged);
+//   document
+//     .querySelector("#input-search")
+//     .addEventListener("search", inputSearchChanged);
+// }
 
-function inputSearchChanged(event) {
-  const value = event.target.value;
-  const postsToShow = searchPosts(value);
-  showPosts(postsToShow);
-}
+// function inputSearchChanged(event) {
+//   const value = event.target.value;
+//   const postsToShow = searchPosts(value);
+//   showPosts(postsToShow);
+// }
 
-function searchPosts(searchValue) {
-  searchValue = searchValue.toLowerCase();
+// function searchPosts(searchValue) {
+//   searchValue = searchValue.toLowerCase();
 
-  const results = posts.filter(checkTitle);
+//   const results = posts.filter(checkTitle);
 
-  function checkTitle(post) {
-    const title = post.title.toLowerCase();
-    return title.includes(searchValue);
-  }
+//   function checkTitle(post) {
+//     const title = post.title.toLowerCase();
+//     return title.includes(searchValue);
+//   }
 
-  return results;
-}
+//   return results;
+// }
 
-const search = () => {
-  const searchbox = document.getelementById("search_bar").value.toLowerCase();
-  const storeItems = docuemnt.getelementById("characters");
-  const product = document.querySelector(".character-grid-item");
-  const pname = document.getElementsByTagName("h3");
+function search() {
+   const searchbox = document.getElementById("input-search").value.toLowerCase();
+   const storeItems = document.getElementById("characters");
+   const product = document.querySelector(".character-grid-item");
+   const pname = document.getElementsByTagName("p");
 
-  for (var i = 0; i < pname.length; i++) {
-    let match = product[i].getElementsByTagName("h3")[0];
+   for (var i = 0; i < pname.length; i++) {
+      let match = product[i].getElementsByTagName("p")[0];
 
-    if (match) {
-      let textvalue = match.textContent || match.innerHTML;
-      if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
-        product[i].style.display = "";
-        e;
-      } else {
-        product[i].style.display = "none";
+      if (match) {
+         let textvalue = match.textContent || match.innerHTML;
+         if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+            product[i].style.display = "";
+            e;
+         } else {
+            product[i].style.display = "none";
+         }
       }
-    }
-  }
-};
+   }
+}
 
 /*
 
