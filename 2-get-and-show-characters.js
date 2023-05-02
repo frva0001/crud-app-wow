@@ -19,7 +19,8 @@ function showCharacter(character) {
    const html = /* html */ `
         <article class="character-grid-item">
             <h3>${character.id}<h3>
-            <p>${character.characterName}<h3>
+            <p>${character.characterName}<p>
+            <p>${character.activites.leveling}</p>
             <button class="btn-update-character">Update character</button>
             <button class="btn-delete-character">Delete character</button>
         </article>
