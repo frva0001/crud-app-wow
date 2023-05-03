@@ -27,6 +27,7 @@ function wowClassClicked(wowClass) {
    } else if (wowClass.id === "warlock") {
       showWarlock(wowClass);
    } else if (wowClass.id === "warrior") {
+      console.log("warrior clicked");
       showWarrior(wowClass);
    } else {
       return false;
@@ -35,19 +36,20 @@ function wowClassClicked(wowClass) {
 
 function showDeathKnight(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="deathKnightDialog">
-        <h3>Dette er en ${wowClass.class}</h3>
+    <dialog open id="deathKnightDialog">
+        <h3>Dette er en deathknight</h3>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" >Close</button>
         </form>
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showDemonHunter(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="demonHunterDialog">
+    <dialog open id="demonHunterDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -55,11 +57,12 @@ function showDemonHunter(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showDruid(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="druidtDialog">
+    <dialog open id="druidtDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -67,11 +70,12 @@ function showDruid(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showEvoker(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="evokerDialog">
+    <dialog open id="evokerDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -79,11 +83,12 @@ function showEvoker(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showHunter(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="hunterDialog">
+    <dialog open id="hunterDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -91,11 +96,12 @@ function showHunter(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showMage(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="mageDialog">
+    <dialog open id="mageDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -103,11 +109,12 @@ function showMage(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showMonk(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="monkDialog">
+    <dialog open id="monkDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -115,11 +122,12 @@ function showMonk(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showPaladin(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="paladinDialog">
+    <dialog open id="paladinDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -127,11 +135,12 @@ function showPaladin(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showPriest(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="priestDialog">
+    <dialog open id="priestDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -139,11 +148,12 @@ function showPriest(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showRogue(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="rogueDialog">
+    <dialog open id="rogueDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -151,11 +161,12 @@ function showRogue(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showShaman(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="shamanDialog">
+    <dialog open id="shamanDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -163,11 +174,12 @@ function showShaman(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showWarlock(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="warlockDialog">
+    <dialog open id="warlockDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -175,11 +187,12 @@ function showWarlock(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showWarrior(wowClass) {
    const myHTML = /*html*/ `
-    <dialog id="warriorDialog">
+    <dialog open id="warriorDialog">
         <h3>Dette er en <span>${wowClass.class}</span></h3>
         <form method="dialog">
             <button>Close</button>
@@ -187,4 +200,5 @@ function showWarrior(wowClass) {
     </dialog>
     `;
    document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
+   document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
