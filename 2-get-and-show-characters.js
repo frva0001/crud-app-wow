@@ -119,3 +119,26 @@ function showCharacters(allCharacters) {
     showCharacter(character);
   }
 }
+
+document
+  .querySelector("#sort-level-button")
+  .addEventListener("click", sortCharactersByLevel);
+document
+  .querySelector("#sort-ilvl-button")
+  .addEventListener("click", sortCharactersByIlvl);
+
+function sortCharactersByLevel() {
+  getCharacters().then((characters) => {
+    characters.sort((a, b) => b.level - a.level);
+    console.log(characters);
+    showCharacters(characters);
+  });
+}
+
+function sortCharactersByIlvl() {
+  getCharacters().then((characters) => {
+    characters.sort((a, b) => b.itemLevel - a.itemLevel);
+    console.log(characters);
+    showCharacters(characters);
+  });
+}
