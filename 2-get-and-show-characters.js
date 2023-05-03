@@ -18,10 +18,17 @@ async function getCharacters() {
 function showCharacter(character) {
   const html = /* html */ `
         <article class="character-grid-item">
-            <h3>${character.characterName}<h3>
-            <h3>${character.level}<h3>
-            <h3>${character.itemLevel}<h3>
+            <h3>Name: ${character.characterName}<h3>
+            <h3>Class: ${character.class}<h3>
+            <h3>Role: ${character.role}<h3>
+            <h3>Spec: ${character.spec}<h3>
+            <h3>Faction: ${character.faction}<h3>
+            <h3>Race: ${character.race}<h3>
+            <h3>Level: ${character.level}<h3>
+            <h3>Ilvl: ${character.itemLevel}<h3>
+            <h3>Country: ${character.country}<h3>
             ${isActive(character)}
+            <h3>Battletag: ${character.battletag}<h3>
             <button class="btn-update-character">Update character</button>
             <button class="btn-delete-character">Delete character</button>
         </article>
@@ -111,4 +118,27 @@ function showCharacters(allCharacters) {
   for (const character of allCharacters) {
     showCharacter(character);
   }
+}
+
+document
+  .querySelector("#sort-level-button")
+  .addEventListener("click", sortCharactersByLevel);
+document
+  .querySelector("#sort-ilvl-button")
+  .addEventListener("click", sortCharactersByIlvl);
+
+function sortCharactersByLevel() {
+  getCharacters().then((characters) => {
+    characters.sort((a, b) => b.level - a.level);
+    console.log(characters);
+    showCharacters(characters);
+  });
+}
+
+function sortCharactersByIlvl() {
+  getCharacters().then((characters) => {
+    characters.sort((a, b) => b.itemLevel - a.itemLevel);
+    console.log(characters);
+    showCharacters(characters);
+  });
 }
