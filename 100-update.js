@@ -5,9 +5,9 @@ function updateClicked(character) {
 
    update.updateName.value = character.characterName;
    update.updateRace.value = character.race;
-   update.updateFaction.value = character.title;
+   update.updateFaction.value = character.faction;
    update.updateClass.value = character.class;
-   update.updateSpecialization.value = character.specialization;
+   update.updateSpecialization.value = character.spec;
    update.updateRole.value = character.role;
    update.updateItemLevel.value = character.itemLevel;
    update.updateLevel.value = character.level;

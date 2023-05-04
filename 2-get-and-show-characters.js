@@ -18,7 +18,7 @@ async function getCharacters() {
 function showCharacter(character) {
    const html = /* html */ `
         <article class="character-grid-item">
-            <h3>${character.characterName}. ${character.class}<h3>
+            <h3>${character.characterName}, ${character.class}<h3>
             <p>${character.race}, ${character.faction}</p>
             <p>${character.spec}, ${character.role}<p>
             <p>Level ${character.level}<p>
