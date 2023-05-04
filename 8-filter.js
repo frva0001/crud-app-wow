@@ -16,10 +16,10 @@ async function getCharacters() {
 
 // function showCharacter(character) {
 //    const html = /* html */ `
-//         <article class="character-grid-item">
+//         <article class="characters__item-item">
 //             <h3>${character.id}<h3>
-//             <button class="btn-update-character">Update character</button>
-//             <button class="btn-delete-character">Delete character</button>
+//             <button class="btn__style">Update character</button>
+//             <button class="btn__style">Delete character</button>
 //         </article>
 //     `;
 

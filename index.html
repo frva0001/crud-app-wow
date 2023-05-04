@@ -4,66 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <title>crud app udkast</title>
 </head>
 <body>
+    <!-- HEADER START -->
+    <header class="navbar">
+        <button id="btn__add" class="btn__style"> Add a character</button>
+        <h1>WoW CRUD Vault</h1>
+            <!-- SEARCH BAR START -->
+            <div id="search">
+                <input id="searchInput" type="text" placeholder="Search">
+            </div>
+            <!-- SEARCH BAR END -->
+    </header>
+    <!-- HEADER END -->
 
-    <header class="header_one">
-        <h1>Actual Crud APP</h1><br>
-         <button id="btn-add-character"> Add a character</button>
-    <!-- Search Bar -->
-
-       <div id="container">
-        <div id="search">
-            <label for="searchInput">Find <i class="fa fa-search"></i>user</label>
-            <input id="searchInput" type="text" placeholder="Search">
+    <!-- FILTER HEADER START -->
+    <div class="filter">
+        <div class="filter__items">
+            <div class="filter__items-box">
+                <input type="checkbox" name="activities" id="filterLeveling" value="Leveling and BFA dungeons" />
+                <label for="activities">Activities</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" name= "questing" id="filterQuesting">
+                <label for="Questing">Questing</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterMythicPlus1">
+                <label for="mythicPlus1">Mythic+ Keys 1-10 </label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterMythicPlus2">
+                <label for="mythicPlus2">Mythic+ Keys 10-15</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterMythicPlus3">
+                <label for="mythicPlus3">Mythic+ Keys 15-20</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterMythicPlus4">
+                <label for="mythicPlus4">Mythic+ Keys 20 and above</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterRaid1">
+                <label for="raid1">Normal Raids</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterRaid2">
+                <label for="raid2">Heroic Raids</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterRaid3">
+                <label for="raid3">Mythic Raids</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterPvp1">
+                <label for="pvp1">Battlegrounds, 10v10, 15v15</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterPvp2">
+                <label for="pvp2">2v2, 3v3</label>
+            </div>
+            <div class="filter__items-box">
+                <input type="checkbox" id="filterTransmogAndMounts">
+                <label for="transmogAndMounts">Transmog & Mounts</label>
+            </div>
         </div>
+        <div class="filter__sorts">
+            <button id="sort-level-button" class="btn__style">Sort by Level</button>
+            <button id="sort-ilvl-button" class="btn__style">Sort by Item Level</button>
+        </div>
+    </div>
+    <!-- FILTER HEADER END -->
 
-    </header>
-    <header id="filter-header" class="header_two">
-        <div id="text-filter"> Filters:</div>
-        <div id="filters">
-        <input type="checkbox" name="activities" id="filterLeveling" value="Leveling and BFA dungeons" />
-        <label for="activities">Activities</label>
-        <input type="checkbox" name= "questing" id="filterQuesting">
-        <label for="Questing">Questing</label>
-        <input type="checkbox" id="filterMythicPlus1">
-        <label for="mythicPlus1">Mythic+ Keys 1-10 </label>
-        <input type="checkbox" id="filterMythicPlus2">
-        <label for="mythicPlus2">Mythic+ Keys 10-15</label>
-        <input type="checkbox" id="filterMythicPlus3">
-        <label for="mythicPlus3">Mythic+ Keys 15-20</label>
-        <input type="checkbox" id="filterMythicPlus4">
-        <label for="mythicPlus4">Mythic+ Keys 20 and above</label>
-        <input type="checkbox" id="filterRaid1">
-        <label for="raid1">Normal Raids</label>
-        <input type="checkbox" id="filterRaid2">
-        <label for="raid2">Heroic Raids</label>
-        <input type="checkbox" id="filterRaid3">
-        <label for="raid3">Mythic Raids</label>
-        <input type="checkbox" id="filterPvp1">
-        <label for="pvp1">Battlegrounds, 10v10, 15v15</label>
-        <input type="checkbox" id="filterPvp2">
-        <label for="pvp2">2v2, 3v3</label>
-        <input type="checkbox" id="filterTransmogAndMounts">
-        <label for="transmogAndMounts">Transmog & Mounts</label>
-        <button id="sort-level-button">Sort by Level</button>
-        <button id="sort-ilvl-button">Sort by Item Level</button>
-</div>
-    </header>
-
-
-    <!-- Class grid -->
-    <div id="classes" class="class-grid"></div>
-    <!-- Character grid -->
-    <div id="characters" class="character-grid"></div>
+    <div class="body-wrap">
+        <!-- CLASSES LEFT -->
+        <div class="classes-wrap">
+            <div id="classes" class="classes-item"></div>
+        </div>
+        <!-- CHARACTERS ITEMS RIGHT -->
+        <!-- ID used for Functions, CLASS to style -->
+        <div class="characters-wrap">
+            <div id="characters" class="characters__item-wrap"></div>
+        </div>
+    </div>
     <!-- dialog for classes -->
     <div id="dialog-for-classes" class="hidden"></div>
 
     <!-- Add character dialog and form -->
     <dialog id="dialog-add-character">
-     <p id="first_add_char">Add Character</p>
+     <!-- <p id="first_add_char">Add Character</p> -->
 
         <form id="form-add-character">
 
@@ -108,86 +144,86 @@
                 <!-- Class -->
                 <label for="class">Pick your Class</label>
                 <select id="class">
-                    <option value="Warrior">Warrior</option>
-                    <option value="Paladin">Paladin</option>
-                    <option valie="Hunter">Hunter</option>
-                    <option value="Rogue">Rogue</option>
-                    <option value="Priest">Priest</option>
-                    <option value="Shaman"> Shaman</option>
-                    <option value="Mage">Mage</option>
-                    <option value="Warlock">Warlock</option>
-                    <option value="Monk">Monk</option>
-                    <option value="Druid">Druid</option>
-                    <option value="Demon Hunter">Demon Hunter</option>
-                    <option value="Death Knight">Death Knight</option>
-                    <option value="Evoker">Evoker</option>
+                    <option value="warrior">Warrior</option>
+                    <option value="paladin">Paladin</option>
+                    <option valie="hunter">Hunter</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="priest">Priest</option>
+                    <option value="shaman"> Shaman</option>
+                    <option value="mage">Mage</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="monk">Monk</option>
+                    <option value="druid">Druid</option>
+                    <option value="demonHunter">Demon Hunter</option>
+                    <option value="deathKnight">Death Knight</option>
+                    <option value="evoker">Evoker</option>
                 </select> </br></br>
                 <!-- Specialization and Role -->
                 <label for="spec"> Choose your Specialization</label>
                 <select id="specialization">
                     <optgroup id="optionsWarrior" label="Warrior">
-                        <option value="Arms"> Arms </option>
-                        <option value="Fury"> Fury </option>
-                        <option value="Protection"> Protection </option>
+                        <option value="arms"> Arms </option>
+                        <option value="fury"> Fury </option>
+                        <option value="protection"> Protection </option>
                     </optgroup>
                     <optgroup id="optionsPaladin" label="Paladin">
-                        <option value="Protection"> Protection </option>
-                        <option value="Retribution"> Retribution </option>
-                        <option value="Holy"> Holy </option>
+                        <option value="protection"> Protection </option>
+                        <option value="retribution"> Retribution </option>
+                        <option value="holy"> Holy </option>
                     </optgroup>
                     <optgroup id="optionsHunter" label="Hunter">
-                        <option value="Beast Mastery"> Beast Mastery </option>
-                        <option value="Marksmanship"> Marksmanship </option>
-                        <option value="Survival"> Survival </option>
+                        <option value="beastMastery"> Beast Mastery </option>
+                        <option value="marksmanship"> Marksmanship </option>
+                        <option value="survival"> Survival </option>
                     </optgroup>
                     <optgroup id="optionsRogue" label="Rogue">
-                        <option value="Assassination"> Assassination </option>
-                        <option value="Outlaw"> Outlaw </option>
-                        <option value="Subtlety"> Subtlety </option>
+                        <option value="assassination"> Assassination </option>
+                        <option value="outlaw"> Outlaw </option>
+                        <option value="subtlety"> Subtlety </option>
                     </optgroup>
                     <optgroup id="optionsPriest" label="Priest">
-                        <option value="Discipline"> Discipline </option>
-                        <option value="Holy"> Holy </option>
-                        <option value="Shadow"> Shadow </option>
+                        <option value="discipline"> Discipline </option>
+                        <option value="holy"> Holy </option>
+                        <option value="shadow"> Shadow </option>
                     </optgroup>
                     <optgroup id="optionsShaman" label="Shaman">
-                        <option value="Elemental"> Elemental </option>
-                        <option value="Enhancement"> Enhancement </option>
-                        <option value="Restoration"> Restoration </option>
+                        <option value="elemental"> Elemental </option>
+                        <option value="enhancement"> Enhancement </option>
+                        <option value="restoration"> Restoration </option>
                     </optgroup>
                     <optgroup id="optionsMage" label="Mage">
-                        <option value="Arcane"> Arcane </option>
-                        <option value="Fire"> Fire </option>
-                        <option value="Frost"> Frost </option>
+                        <option value="arcane"> Arcane </option>
+                        <option value="fire"> Fire </option>
+                        <option value="frost"> Frost </option>
                     </optgroup>
                     <optgroup id="optionsWarlock" label="Warlock">
-                        <option value="Affliction"> Affliction </option>
-                        <option value="Demonology"> Demonology </option>
-                        <option value="Destruction"> Destruction </option>
+                        <option value="affliction"> Affliction </option>
+                        <option value="demonology"> Demonology </option>
+                        <option value="destruction"> Destruction </option>
                     </optgroup>
                     <optgroup id="optionsMonk" label="Monk">
-                        <option value="Brewmaster"> Brewmaster </option>
-                        <option value="Mistweaver"> Mistweaver </option>
-                        <option value="Windwalker"> Windwalker </option>
+                        <option value="brewmaster"> Brewmaster </option>
+                        <option value="mistweaver"> Mistweaver </option>
+                        <option value="windwalker"> Windwalker </option>
                     </optgroup>
                     <optgroup id="optionsDruid" label="Druid">
-                        <option value="Balance"> Balance </option>
-                        <option value="Feral"> Feral </option>
-                        <option value="Guardian"> Guardian </option>
-                        <option value="Restoration"> Restoration </option>
+                        <option value="balance"> Balance </option>
+                        <option value="feral"> Feral </option>
+                        <option value="guardian"> Guardian </option>
+                        <option value="restoration"> Restoration </option>
                     </optgroup>
                     <optgroup id="optionsDemonHunter" label="Demon Hunter">
-                        <option value="Havoc"> Havoc </option>
-                        <option value="Vengeance"> Vengeance </option>
+                        <option value="havoc"> Havoc </option>
+                        <option value="vengeance"> Vengeance </option>
                     </optgroup>
                     <optgroup id="optionsDeathKnight" label="Death Knight">
-                        <option value="Blood"> Blood </option>
-                        <option value="Frost"> Frost </option>
-                        <option value="Unholy"> Unholy </option>
+                        <option value="blood"> Blood </option>
+                        <option value="frost"> Frost </option>
+                        <option value="unholy"> Unholy </option>
                     </optgroup>
                     <optgroup id="optionsEvoker" label="Evoker">
-                        <option value="Devastation"> Devastation </option>
-                        <option value="Preservation"> Preservation </option>
+                        <option value="devastation"> Devastation </option>
+                        <option value="preservation"> Preservation </option>
                     </optgroup>
                 </select></br></br>
                 <label for="role"> Pick your Primary Role</label>
@@ -238,9 +274,9 @@
                 <input type="text" name="battletag" id="battletag"></br></br>
             </section>
             <section id="buttons">
-                <input type="submit" name="btn-add" id="btn-add" value="Add Character">
-                <input type="reset" name ="btn-reset" id="btn-reset" value="Reset form">
-                <button id="btn-close-window">Close</button>
+                <input type="submit" name="btn__style" id="btn__style" class="btn__style" value="Add Character">
+                <input type="reset" name ="btn-reset" id="btn-reset" class="btn__style" value="Reset form">
+                <button id="btn-close-window" class="btn__style">Close</button>
             </section>
         </form>
     </dialog>
@@ -292,85 +328,86 @@
                 <!-- Class -->
                 <label for="updateClass">Pick your Class</label>
                 <select id="updateClass">
-                    <option value="Warrior">Warrior</option>
-                    <option value="Paladin">Paladin</option>
-                    <option valie="Hunter">Hunter</option>
-                    <option value="Rogue">Rogue</option>
-                    <option value="Priest">Priest</option>
-                    <option value="Shaman"> Shaman</option>
-                    <option value="Mage">Mage</option>
-                    <option value="Monk">Monk</option>
-                    <option value="Druid">Druid</option>
-                    <option value="Demon Hunter">Demon Hunter</option>
-                    <option value="Death Knight">Death Knight</option>
-                    <option value="Evoker">Evoker</option>
+                    <option value="warrior">Warrior</option>
+                    <option value="paladin">Paladin</option>
+                    <option valie="hunter">Hunter</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="priest">Priest</option>
+                    <option value="shaman"> Shaman</option>
+                    <option value="mage">Mage</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="monk">Monk</option>
+                    <option value="druid">Druid</option>
+                    <option value="demonHunter">Demon Hunter</option>
+                    <option value="deathKnight">Death Knight</option>
+                    <option value="evoker">Evoker</option>
                 </select> </br></br>
                 <!-- Specialization and Role -->
                 <label for="updateSpecialization"> Choose your Specialization</label>
                 <select id="updateSpecialization">
                     <optgroup id="optionsWarrior" label="Warrior">
-                        <option value="Arms"> Arms </option>
-                        <option value="Fury"> Fury </option>
-                        <option value="Protection"> Protection </option>
+                        <option value="arms"> Arms </option>
+                        <option value="fury"> Fury </option>
+                        <option value="protection"> Protection </option>
                     </optgroup>
                     <optgroup id="optionsPaladin" label="Paladin">
-                        <option value="Protection"> Protection </option>
-                        <option value="Retribution"> Retribution </option>
-                        <option value="Holy"> Holy </option>
+                        <option value="protection"> Protection </option>
+                        <option value="retribution"> Retribution </option>
+                        <option value="holy"> Holy </option>
                     </optgroup>
                     <optgroup id="optionsHunter" label="Hunter">
-                        <option value="Beast Mastery"> Beast Mastery </option>
-                        <option value="Marksmanship"> Marksmanship </option>
-                        <option value="Survival"> Survival </option>
+                        <option value="beastMastery"> Beast Mastery </option>
+                        <option value="marksmanship"> Marksmanship </option>
+                        <option value="survival"> Survival </option>
                     </optgroup>
                     <optgroup id="optionsRogue" label="Rogue">
-                        <option value="Assassination"> Assassination </option>
-                        <option value="Outlaw"> Outlaw </option>
-                        <option value="Subtlety"> Subtlety </option>
+                        <option value="assassination"> Assassination </option>
+                        <option value="outlaw"> Outlaw </option>
+                        <option value="subtlety"> Subtlety </option>
                     </optgroup>
                     <optgroup id="optionsPriest" label="Priest">
-                        <option value="Discipline"> Discipline </option>
-                        <option value="Holy"> Holy </option>
-                        <option value="Shadow"> Shadow </option>
+                        <option value="discipline"> Discipline </option>
+                        <option value="holy"> Holy </option>
+                        <option value="shadow"> Shadow </option>
                     </optgroup>
                     <optgroup id="optionsShaman" label="Shaman">
-                        <option value="Elemental"> Elemental </option>
-                        <option value="Enhancement"> Enhancement </option>
-                        <option value="Restoration"> Restoration </option>
+                        <option value="elemental"> Elemental </option>
+                        <option value="enhancement"> Enhancement </option>
+                        <option value="restoration"> Restoration </option>
                     </optgroup>
                     <optgroup id="optionsMage" label="Mage">
-                        <option value="Arcane"> Arcane </option>
-                        <option value="Fire"> Fire </option>
-                        <option value="Frost"> Frost </option>
+                        <option value="arcane"> Arcane </option>
+                        <option value="fire"> Fire </option>
+                        <option value="frost"> Frost </option>
                     </optgroup>
                     <optgroup id="optionsWarlock" label="Warlock">
-                        <option value="Affliction"> Affliction </option>
-                        <option value="Demonology"> Demonology </option>
-                        <option value="Destruction"> Destruction </option>
+                        <option value="affliction"> Affliction </option>
+                        <option value="demonology"> Demonology </option>
+                        <option value="destruction"> Destruction </option>
                     </optgroup>
                     <optgroup id="optionsMonk" label="Monk">
-                        <option value="Brewmaster"> Brewmaster </option>
-                        <option value="Mistweaver"> Mistweaver </option>
-                        <option value="Windwalker"> Windwalker </option>
+                        <option value="brewmaster"> Brewmaster </option>
+                        <option value="mistweaver"> Mistweaver </option>
+                        <option value="windwalker"> Windwalker </option>
                     </optgroup>
                     <optgroup id="optionsDruid" label="Druid">
-                        <option value="Balance"> Balance </option>
-                        <option value="Feral"> Feral </option>
-                        <option value="Guardian"> Guardian </option>
-                        <option value="Restoration"> Restoration </option>
+                        <option value="balance"> Balance </option>
+                        <option value="feral"> Feral </option>
+                        <option value="guardian"> Guardian </option>
+                        <option value="restoration"> Restoration </option>
                     </optgroup>
                     <optgroup id="optionsDemonHunter" label="Demon Hunter">
-                        <option value="Havoc"> Havoc </option>
-                        <option value="Vengeance"> Vengeance </option>
+                        <option value="havoc"> Havoc </option>
+                        <option value="vengeance"> Vengeance </option>
                     </optgroup>
                     <optgroup id="optionsDeathKnight" label="Death Knight">
-                        <option value="Blood"> Blood </option>
-                        <option value="Frost"> Frost </option>
-                        <option value="Unholy"> Unholy </option>
+                        <option value="blood"> Blood </option>
+                        <option value="frost"> Frost </option>
+                        <option value="unholy"> Unholy </option>
                     </optgroup>
                     <optgroup id="optionsEvoker" label="Evoker">
-                        <option value="Devastation"> Devastation </option>
-                        <option value="Preservation"> Preservation </option>
+                        <option value="devastation"> Devastation </option>
+                        <option value="preservation"> Preservation </option>
                     </optgroup>
                 </select></br></br>
                 <label for="updateRole"> Pick your Primary Role</label>
@@ -421,23 +458,28 @@
                 <input type="text" name="updateBattletag" id="updateBattletag"></br></br>
             </section>
             <section id="buttons">
-                <button>Update Character</button>
-                <button>Reset form</button>
-                <button id="btn-close-window">Close</button>
+                <button class="btn__style">Update Character</button>
+                <button class="btn__style">Reset form</button>
+                <button id="btn-close-window" class="btn__style">Close</button>
             </section>
         </form>
     </dialog>
 
     <!-- dialog - delete post -->
     <dialog id="dialog-delete-post">
-        <h2>Do you want to delete this Character?</h2>
-        <p id="dialog-delete-post-title"></p>
+        <h2>Do you want to delete post?</h2>
+        <p id="dialog-delete-post-title">Title of post</p>
         <form method="dialog" id="form-delete-post">
-            <button>No</button>
-            <button>Yes</button>
+            <button class="btn__style">No</button>
+            <button class="btn__style">Yes</button>
         </form>
     </dialog>
 
+    <footer class="footer">
+        <h4>By Gamers, for Gamers</h4>
+        <h5>Made by: Frederikke, Valde, Burim and Christian</h5>
+
+    </footer>
 
 
     <!-- All javascript -->

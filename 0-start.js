@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("hej0");
-
 window.addEventListener("load", start);
 
 // constant for our data
@@ -15,7 +13,7 @@ function start() {
 
   // all click events gets added here eventually.
   document
-    .querySelector("#btn-add-character")
+    .querySelector("#btn__add")
     .addEventListener("click", showAddCharacterDialog);
   document
     .querySelector("#form-add-character")
@@ -29,7 +27,6 @@ function start() {
 }
 
 // putting our data into an array (always necessary)
-
 function prepareData(dataObject) {
   const array = [];
   for (const key in dataObject) {

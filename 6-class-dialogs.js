@@ -1,41 +1,41 @@
 "use strict";
 
 function wowClassClicked(wowClass) {
-   if (wowClass.id === "deathKnight") {
-      showDeathKnight(wowClass);
-   } else if (wowClass.id === "demonHunter") {
-      showDemonHunter(wowClass);
-   } else if (wowClass.id === "druid") {
-      showDruid(wowClass);
-   } else if (wowClass.id === "evoker") {
-      showEvoker(wowClass);
-   } else if (wowClass.id === "hunter") {
-      showHunter(wowClass);
-   } else if (wowClass.id === "mage") {
-      showMage(wowClass);
-   } else if (wowClass.id === "monk") {
-      showMonk(wowClass);
-   } else if (wowClass.id === "paladin") {
-      showPaladin(wowClass);
-   } else if (wowClass.id === "priest") {
-      showPriest(wowClass);
-   } else if (wowClass.id === "rogue") {
-      showRogue(wowClass);
-   } else if (wowClass.id === "shaman") {
-      showShaman(wowClass);
-   } else if (wowClass.id === "warlock") {
-      showWarlock(wowClass);
-   } else if (wowClass.id === "warrior") {
-      console.log("warrior clicked");
-      showWarrior(wowClass);
-   } else {
-      return false;
-   }
+  if (wowClass.id === "deathKnight") {
+    showDeathKnight(wowClass);
+  } else if (wowClass.id === "demonHunter") {
+    showDemonHunter(wowClass);
+  } else if (wowClass.id === "druid") {
+    showDruid(wowClass);
+  } else if (wowClass.id === "evoker") {
+    showEvoker(wowClass);
+  } else if (wowClass.id === "hunter") {
+    showHunter(wowClass);
+  } else if (wowClass.id === "mage") {
+    showMage(wowClass);
+  } else if (wowClass.id === "monk") {
+    showMonk(wowClass);
+  } else if (wowClass.id === "paladin") {
+    showPaladin(wowClass);
+  } else if (wowClass.id === "priest") {
+    showPriest(wowClass);
+  } else if (wowClass.id === "rogue") {
+    showRogue(wowClass);
+  } else if (wowClass.id === "shaman") {
+    showShaman(wowClass);
+  } else if (wowClass.id === "warlock") {
+    showWarlock(wowClass);
+  } else if (wowClass.id === "warrior") {
+    console.log("warrior clicked");
+    showWarrior(wowClass);
+  } else {
+    return false;
+  }
 }
 
 function showDeathKnight(wowClass) {
-   console.log(wowClass);
-   const myHTML = /*html*/ `
+  console.log(wowClass);
+  const myHTML = /*html*/ `
     <dialog open id="deathKnightDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.Resource}</span></p>
@@ -62,16 +62,18 @@ function showDeathKnight(wowClass) {
         </article>
         <p><span>The Death Knight Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button id="class-close" >Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showDemonHunter(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="demonHunterDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -91,16 +93,18 @@ function showDemonHunter(wowClass) {
         </article>
         <p><span>The Demon Hunter Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showDruid(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="druidtDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -134,16 +138,19 @@ function showDruid(wowClass) {
         </article>
         <p><span>The Druid Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+                        <button id="class-close" class="btn__style" >Close</button>
+
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showEvoker(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="evokerDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -163,16 +170,18 @@ function showEvoker(wowClass) {
         </article>
         <p><span>The Evoker Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showHunter(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="hunterDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -199,16 +208,18 @@ function showHunter(wowClass) {
         </article>
         <p><span>The Hunter Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showMage(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="mageDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -235,16 +246,18 @@ function showMage(wowClass) {
         </article>
         <p><span>The Mage Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showMonk(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="monkDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -271,16 +284,18 @@ function showMonk(wowClass) {
         </article>
         <p><span>The Monk Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showPaladin(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="paladinDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -307,16 +322,18 @@ function showPaladin(wowClass) {
         </article>
         <p><span>The Paladin Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showPriest(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="priestDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -343,16 +360,18 @@ function showPriest(wowClass) {
         </article>
         <p><span>The Priest Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showRogue(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="rogueDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -379,16 +398,18 @@ function showRogue(wowClass) {
         </article>
         <p><span>The Rogue Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showShaman(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="shamanDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -415,16 +436,18 @@ function showShaman(wowClass) {
         </article>
         <p><span>The Shaman Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showWarlock(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="warlockDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -451,16 +474,18 @@ function showWarlock(wowClass) {
         </article>
         <p><span>The Warlock Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }
 
 function showWarrior(wowClass) {
-   const myHTML = /*html*/ `
+  const myHTML = /*html*/ `
     <dialog open id="warriorDialog">
         <h3><span>${wowClass.class}</span></h3>
         <p><span>Armor type: ${wowClass.armorType}, Resource: ${wowClass.resource}</span></p>
@@ -487,10 +512,12 @@ function showWarrior(wowClass) {
         </article>
         <p><span>The Warrior Class is available with the following classes: </br> ${wowClass.availableRaces}</span></p>
         <form method="dialog">
-            <button>Close</button>
+            <button id="class-close" class="btn__style" >Close</button>
         </form>
     </dialog>
     `;
-   document.querySelector("#dialog-for-classes").insertAdjacentHTML("beforeend", myHTML);
-   document.querySelector("#dialog-for-classes").classList.remove("hidden");
+  document
+    .querySelector("#dialog-for-classes")
+    .insertAdjacentHTML("beforeend", myHTML);
+  document.querySelector("#dialog-for-classes").classList.remove("hidden");
 }

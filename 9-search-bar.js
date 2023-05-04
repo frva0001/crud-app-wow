@@ -3,25 +3,25 @@
 const searchInput = document.getElementById("searchInput");
 
 //store name elements in array
-const namesFromDOM = document.getElementsByClassName("character-grid-item");
+const namesFromDOM = document.getElementsByClassName("characters__item");
 
 //listen
 searchInput.addEventListener("keyup", (event) => {
-   const { value } = event.target;
+  const { value } = event.target;
 
-   const searchQuery = value;
+  const searchQuery = value;
 
-   for (const nameElement of namesFromDOM) {
-      //store grid item text and convert to lowercase
-      let name = nameElement.textContent.toLowerCase();
-      //compare to search
-      if (name.includes(searchQuery)) {
-         nameElement.style.display = "block";
-      } else {
-         // NOT found
-         nameElement.style.display = "none";
-      }
-   }
+  for (const nameElement of namesFromDOM) {
+    //store grid item text and convert to lowercase
+    let name = nameElement.textContent.toLowerCase();
+    //compare to search
+    if (name.includes(searchQuery)) {
+      nameElement.style.display = "block";
+    } else {
+      // NOT found
+      nameElement.style.display = "none";
+    }
+  }
 });
 
 /*window.addEventListener("load", start);
@@ -58,7 +58,7 @@ searchInput.addEventListener("keyup", (event) => {
 function search() {
    const searchbox = document.getElementById("input-search").value.toLowerCase();
    const storeItems = document.getElementById("characters");
-   const product = document.querySelector(".character-grid-item");
+   const product = document.querySelector(".characters__item-item");
    const pname = document.getElementsByTagName("p");
 
    for (var i = 0; i < pname.length; i++) {
@@ -66,7 +66,7 @@ function search() {
 const search = () => {
   const searchbox = document.getelementById("search_bar").value.toLowerCase();
   const storeItems = docuemnt.getelementById("characters");
-  const product = document.querySelector(".character-grid-item");
+  const product = document.querySelector(".characters__item-item");
   const pname = document.getElementsByTagName("p");
 
   for (var i = 0; i < pname.length; i++) {
